@@ -42,7 +42,7 @@ resource "aws_security_group_rule" "ssh_cluster_out" {
 module "eks" {
  source = "terraform-aws-modules/eks/aws"
  version = "19.0.0"
- cluster_name  = "my-eks-cluster"
+ cluster_name  = "appfastfood-cluster"
  cluster_version = "1.28"
   cluster_endpoint_private_access = true
 
