@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '**/*destroy*/**'
+
 
 permissions:
     id-token: write # This is required for requesting the JWT
