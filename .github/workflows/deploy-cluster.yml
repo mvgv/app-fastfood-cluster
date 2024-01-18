@@ -40,6 +40,11 @@ jobs:
         terraform init 
         terraform validate
 
+    - name: Terraform Destroy
+      run: |
+        cd infra
+        terraform destroy -auto-approve
+
     - name: Terraform Plan
       run: |
         cd infra
