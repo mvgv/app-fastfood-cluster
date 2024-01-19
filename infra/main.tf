@@ -59,10 +59,12 @@ module "eks" {
       instance_types = ["t2.micro"]
     }
   }
-  cluster_encryption_config = [{
-  provider_key_arn = "arn:aws:kms:us-east-1:101478099523:key/c4ebd645-190f-457a-9968-d8cf12d63b14"
-  resources     = "secrets"
-  }]
+  cluster_encryption_config = [
+    {
+      resources        = ["secrets"]
+      provider_key_arn = "arn:aws:kms:us-east-1:101478099523:key/c4ebd645-190f-457a-9968-d8cf12d63b14"
+    }
+  ]
 }
 
 
