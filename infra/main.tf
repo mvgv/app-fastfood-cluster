@@ -60,6 +60,9 @@ module "eks" {
       instance_types = ["t2.micro"]
     }
   }
+
+  cluster_encryption_config = {}
+  
 }
 
 
