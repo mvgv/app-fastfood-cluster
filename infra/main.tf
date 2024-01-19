@@ -44,7 +44,7 @@ module "eks" {
  version = "19.0.0"
  cluster_name  = "appfastfood-cluster"
  cluster_version = "1.28"
-  cluster_endpoint_private_access = true
+ cluster_endpoint_private_access = false
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
