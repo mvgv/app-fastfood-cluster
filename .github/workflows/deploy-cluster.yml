@@ -51,8 +51,11 @@ jobs:
         terraform plan -input=false -out=tfplan
 
     - name: Terraform Apply
-      continue-on-error: true
       run: |
         cd infra
         terraform apply -input=false  -auto-approve
-      
+
+    - name: Save Terraform state
+      uses: terraform-linters/action/terraform-state@v0.1.0
+      with:
+        path: ./infra/terraform.tfstate
