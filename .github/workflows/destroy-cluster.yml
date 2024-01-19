@@ -4,9 +4,7 @@ name: Deploy AWS Lambda - Destroy
 on:
  push:
    branches:
-     - main
-   paths:
-     - '**/*destro*/**'
+     - destroy/cluster
 
 jobs:
  deploy:
@@ -29,9 +27,8 @@ jobs:
 
    - name: Terraform Init
      run: |
-       cd infra
-       terraform init 
-       terraform validate
+        cd infra
+        terraform init -backend-config="path=./terraform.tfstate"
 
    - name: Terraform Destroy
      run: |
