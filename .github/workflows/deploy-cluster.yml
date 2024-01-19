@@ -54,6 +54,7 @@ jobs:
         terraform apply -input=false  -auto-approve
 
     - name: Save Terraform state
-      uses: terraform-linters/action/terraform-state@v0.1.0
+      uses: actions/upload-artifact@v2
       with:
+        name: terraform-state
         path: ./infra/terraform.tfstate
