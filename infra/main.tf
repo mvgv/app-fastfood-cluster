@@ -46,6 +46,7 @@ module "eks" {
  cluster_version = "1.28"
  cluster_endpoint_private_access = false
  cluster_endpoint_public_access = true
+ create_kms_key = false
 
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.vpc.private_subnets
@@ -59,12 +60,6 @@ module "eks" {
       instance_types = ["t2.micro"]
     }
   }
-  cluster_encryption_config = [
-    {
-      resources        = ["secrets"]
-      provider_key_arn = "arn:aws:kms:us-east-1:101478099523:key/c4ebd645-190f-457a-9968-d8cf12d63b14"
-    }
-  ]
 }
 
 
