@@ -52,9 +52,3 @@ jobs:
       run: |
         cd infra
         terraform apply -input=false  -auto-approve
-
-    - name: Save Terraform state
-      uses: actions/upload-artifact@v2
-      with:
-        name: terraform-state
-        path: ./infra/terraform.tfstate
