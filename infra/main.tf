@@ -77,6 +77,7 @@ resource "aws_iam_role_policy_attachment" "eks_service_policy_attachment" {
 }
 
 
+
 resource "aws_iam_role_policy" "eks_nodegroup_policy" {
   name = "eks_nodegroup_policy"
   role = "deploy_lambda_dynamo"
